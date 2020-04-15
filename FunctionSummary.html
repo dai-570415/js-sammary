@@ -67,10 +67,25 @@
 
 
   // forEach(ループ)
+  // 返り値を返せない
   const texts = ['foo', 'hoge', 'fugafuga'];
 
   texts.forEach((text) => {
     console.log(text);
   });
+
+  // map関数(ループ)
+  // 返り値を返せる
+  const animals = [
+    {'id': 1, 'category': 'animal', 'kind': 'dog'},
+    {'id': 2, 'category': 'animal', 'kind': 'cat'},
+    {'id': 3, 'category': 'animal', 'kind': 'bird'},
+  ];
+
+  const id = animals.map(val => val.id);
+  const category = animals.map(val => val.category);
+  const kind = animals.map(val => val.kind);
+
+  console.log(kind);
 	
 </script>
