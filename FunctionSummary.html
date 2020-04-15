@@ -1,0 +1,76 @@
+<script>
+  // Javascript関数についてまとめ
+
+  // function isTweetable(text) {
+  //   return text.length <= 140;
+  // }
+  // ↓
+  // 匿名関数, 無名関数
+  const isTweetable = (text) => {
+    return text.length <= 140;
+  }
+  console.log(isTweetable('foo'));
+
+  // function alertTweetable(text) {
+  //   if (isTweetable(text)) {
+  //     alert('You can Tweet!');
+  //   } else {
+  //     alert("You can't Tweet!");
+  //   }
+  // }
+  // ↓
+  // 匿名関数, 無名関数
+  const alertTweetable = (text) => {
+    if (isTweetable(text)) {
+      alert('You can Tweet!');
+    } else {
+      alert("You can't Tweet!");
+    }
+  }
+  alertTweetable('foo');
+
+
+  // Twitterのダイアログ的なもの実装
+  const confirmed = (fn) => {
+    if (window.confirm('実行しますか？')) {
+      fn();
+    }
+  }
+  // コールバック関数
+  confirmed(() => {
+    console.log('フォロー外しました');
+  });
+
+  confirmed(() => {
+    console.log('ツイートをキャンセルしました');
+  });
+
+
+  // Gitリポジトリ削除的なもの実装
+  const confirmed = (fn) => {
+    const input = window.prompt('実行しますか？');
+    fn(input);
+  }
+
+  confirmed((input) => {
+    if (input === '実行') {
+      console.log('リポジトリの削除'); // ここに削除処理を書けば実装可能
+    }
+  });
+
+
+  // addEventListener(イベント)
+  const btn = document.getElementByID('button');
+  btn.addEventListener('click', () => {
+    console.log('フォロー解除');
+  });
+
+
+  // forEach(ループ)
+  const texts = ['foo', 'hoge', 'fugafuga'];
+
+  texts.forEach((text) => {
+    console.log(text);
+  });
+	
+</script>
